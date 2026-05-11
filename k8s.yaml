@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: resttemplateserver
-          image: yklee2002/resttemplateserver:latest
+          image: doenini/resttemplateserver:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
@@ -32,19 +32,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: mysql-secret
-                  key: password
-          readinessProbe:
-            httpGet:
-              path: /books
-              port: 8080
-            initialDelaySeconds: 20
-            periodSeconds: 10
-          livenessProbe:
-            httpGet:
-              path: /books
-              port: 8080
-            initialDelaySeconds: 30
-            periodSeconds: 15
+                  key: password   
 ---
 apiVersion: v1
 kind: Service
@@ -66,4 +54,4 @@ metadata:
 type: Opaque
 stringData:
   username: root
-  password: root1234
+  password: doyeon1127
