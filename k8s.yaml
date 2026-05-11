@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: resttemplateserver
-          image: doenini/resttemplateserver:latest
+          image: 210.90.24.172:8080/restproject/doenini/resttemplateserver:7a16bba374be96238f40ae8855bdf6a81fe09e6f
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
